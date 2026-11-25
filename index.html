@@ -698,6 +698,7 @@ sn.addEventListener('pointerdown',e=>{e.preventDefault();sn.setPointerCapture(e.
 $('bMenu').onclick=()=>{initAudio();openMenu()};$('bMusic').onclick=toggleMusic;if(!musicOn){$('bMusic').style.opacity=.4}$('bMute').onclick=toggleMute;
 
 addEventListener('pointerdown',()=>initAudio(),{once:true});addEventListener('keydown',()=>initAudio(),{once:true});
+if('serviceWorker' in navigator&&location.protocol.startsWith('http')){try{navigator.serviceWorker.register('sw.js').catch(()=>{})}catch(e){}}
 resize();applyLang();logoURL=makeLogo(512);setIcon();titleScreen();updHud(true);requestAnimationFrame(loop);
 }
 </script>
